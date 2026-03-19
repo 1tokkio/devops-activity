@@ -15,7 +15,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       
-      - name: build and push
+      - name: build and pushh
         uses: docker/build-push-action@v5
         with:
           context: .
