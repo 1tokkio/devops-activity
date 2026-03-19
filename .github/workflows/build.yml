@@ -13,3 +13,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+        name: build and push
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ secrets.DOCKERHUB_USERNAME }}/mi-nginx:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/mi-nginx:v${{ github.run_number }}
